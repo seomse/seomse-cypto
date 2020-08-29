@@ -168,8 +168,8 @@ public class StringCrypto {
 
     /**
      * 복호화
-     * @param str 암호화된 문자열
-     * @return 원본값
+     * @param str String enc value
+     * @return String dec value
      */
     public String dec(String str){
         try {
@@ -185,7 +185,12 @@ public class StringCrypto {
         }
     }
 
-
+    /**
+     * 암호화
+     * @param key String
+     * @param value String
+     * @return String encValue
+     */
     public static String enc(String key, String value){
         try {
             byte[] keyBytes = makeKeyByte(key);
@@ -200,9 +205,15 @@ public class StringCrypto {
         }catch(Exception e){
             throw new RuntimeException(e);
         }
-
     }
 
+
+    /**
+     * 복호화
+     * @param key String
+     * @param enc 암호화된 값
+     * @return String dec value
+     */
     public static String dec(String key, String enc){
         try {
             byte[] keyBytes= makeKeyByte(key);
@@ -222,6 +233,11 @@ public class StringCrypto {
         }
     }
 
+    /**
+     *
+     * @param key String
+     * @return byte []
+     */
     private static byte [] makeKeyByte(String key){
         byte[] keyBytes= new byte[16];
         byte[] b= key.getBytes(StandardCharsets.UTF_8);
@@ -232,5 +248,29 @@ public class StringCrypto {
         return keyBytes;
     }
 
+
+    /**
+     * 랜덤한 char 배열 생성
+     * @return char []
+     */
+    public static char [] makeRandomCharArray(){
+
+        char [] sortChars = Arrays.copyOf(KEY_CHAR_ARRAY,KEY_CHAR_ARRAY.length);
+
+        Arrays.sort(sortChars);
+
+        Random random = new Random();
+
+        List<Character> list = new LinkedList<>();
+        for(char ch : sortChars){
+            list.add(ch);
+        }
+
+        for (int i = 0; i <sortChars.length ; i++) {
+            sortChars[i] = list.remove(random.nextInt(list.size()));
+        }
+
+        return sortChars;
+    }
 
 }
