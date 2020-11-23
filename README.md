@@ -21,16 +21,15 @@
  
 # gradle
 implementation 'com.seomse.cypto:seomse-cypto:0.1.0'
-
-# etc
-https://mvnrepository.com/artifact/com.seomse.cypto/seomse-cypto/0.1.0
+- etc
+  - https://mvnrepository.com/artifact/com.seomse.cypto/seomse-cypto/0.1.0
 
 # communication
 ### blog, homepage
-- [www.seomse.com](https://www.seomse.com/)
-- [github.com/seomse](https://github.com/seomse)
-- [seomse.tistory.com](https://seomse.tistory.com/)
-- [seomse.github.io](https://seomse.github.io/)
+- www.seomse.com
+- github.com/seomse/
+- seomse.tistory.com
+- seomse.github.io
 - seomse.com
 
 ### 카카오톡 오픈톡
@@ -43,6 +42,6 @@ https://mvnrepository.com/artifact/com.seomse.cypto/seomse-cypto/0.1.0
  - comseomse@gmail.com
  
  
-# main developer
+# dev
  - macle
-    -  [github.com/macle86](https://github.com/macle86)
+    -  github.com/macle86/
